@@ -46,7 +46,7 @@ return [
     'github' => [
         'client_id' => env('GITHUB_CLIENT_ID'),
         'client_secret' => env('GITHUB_SECRET'),
-        'redirect' => 'http://online-judge-ment.herokuapp.com/login/github/callback',
+        'redirect' => env('HEROKU_URL') ? env('HEROKU_URL') . 'login/github/callback' : 'http://localhost:8000/login/github/callback',
     ],
 
 ];
