@@ -19,7 +19,7 @@ class FormController extends Controller{
         $disk->makeDirectory($filePath);
         $file =  $filePath . '/' . $request->problem . '.java';
         $disk->put($file , $request->sourceCode);
-        shell_exec("sh /Users/kei_adachi/Documents/Programming/php_lavel_lessons/experiment/shell/jrun.sh " . '/Users/kei_adachi/Documents/Programming/php_lavel_lessons/experiment/storage/app/' . $file);
-        //TODO　認証されたUserでディレクトリを作って、ソースコードを提出できるように実装する。
+        $result = shell_exec("sh /Users/kei_adachi/Documents/Programming/php_lavel_lessons/experiment/shell/jrun.sh " . '/Users/kei_adachi/Documents/Programming/php_lavel_lessons/experiment/storage/app/' . $file);
+        return redirect('/home')->with('flash_message' , $result);
     }
 }

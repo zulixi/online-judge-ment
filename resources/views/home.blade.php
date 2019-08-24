@@ -14,7 +14,10 @@
                         </div>
                     @endif
 
-                    You are logged in!
+                    <p>You are logged in!</p>
+                    @if(session('flash_message'))
+                        {{session('flash_message')}}
+                    @endif
                 </div>
             </div>
         </div>
