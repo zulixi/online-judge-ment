@@ -16,6 +16,7 @@
             <option value="problem4">problem4</option>
             <option value="problem5">problem5</option>
             <option value="Calc">Calc</option>
+            <option value="Main">Main</option>
 
         </select>
         <select name="lang">

@@ -29,3 +29,14 @@ Route::get('/login/{provider}/callback', 'Auth\SocialAccountController@handlePro
 
 Route::get('form', 'FormController@form');
 Route::post('form', 'FormController@post');
+
+//Route::get('test', 'TestCodeController@test');
+Route::get('test', function (){
+    $data = ['output' => null,
+            'error' => null
+        ];
+    return view('exec');
+});
+Route::post('test', 'TestCodeController@post');
+
+
